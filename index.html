@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DataFormatHub — Free Online JSON to CSV Converter</title>
-  <meta name="description" content="Convert JSON data to CSV format instantly in your browser. Free, fast, and 100% client-side with full data privacy." />
+  <meta name="description" content="Convert JSON data to CSV format instantly in your browser. Learn JSON vs CSV, where CSV is used beyond Excel, and convert data privately." />
   <style>
     * {
       box-sizing: border-box;
@@ -15,21 +15,21 @@
     body {
       background: #f4f7fb;
       color: #1e293b;
-      line-height: 1.6;
+      line-height: 1.65;
     }
     header {
       background: #0f172a;
       color: #ffffff;
-      padding: 20px 16px;
+      padding: 22px 16px;
       text-align: center;
     }
     header h1 {
-      font-size: 1.8rem;
+      font-size: 1.85rem;
       letter-spacing: 0.4px;
     }
     header p {
       color: #cbd5e1;
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       margin-top: 6px;
     }
     .container {
@@ -37,12 +37,12 @@
       margin: 24px auto;
       padding: 0 16px;
     }
-    .tool-card {
+    .tool-card, .info-section {
       background: #ffffff;
       border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
-      margin-bottom: 28px;
+      padding: 22px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+      margin-bottom: 24px;
     }
     .grid {
       display: grid;
@@ -100,7 +100,7 @@
     }
     .status {
       margin-top: 12px;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-weight: 500;
     }
     .error {
@@ -109,31 +109,27 @@
     .ok {
       color: #15803d;
     }
-    .info-section {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 22px;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
-      margin-bottom: 24px;
-    }
     .info-section h2 {
       font-size: 1.25rem;
       color: #0f172a;
       margin-bottom: 10px;
     }
+    .info-section p {
+      margin-bottom: 10px;
+    }
     .info-section ul, .info-section ol {
       padding-left: 20px;
-      margin-top: 8px;
+      margin-top: 6px;
     }
     .info-section li {
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
     .affiliate-box {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
       border-radius: 12px;
       padding: 20px;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
     .affiliate-box h2 {
       font-size: 1.2rem;
@@ -157,13 +153,13 @@
       font-size: 0.9rem;
     }
     .disclosure {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: #475569;
       margin-top: 10px;
     }
     footer {
       text-align: center;
-      padding: 20px 16px;
+      padding: 22px 16px;
       color: #64748b;
       font-size: 0.88rem;
     }
@@ -201,11 +197,11 @@
     <!-- Who Is This Site For -->
     <section class="info-section">
       <h2>1. Who Is DataFormatHub For?</h2>
-      <p>DataFormatHub is built for anyone who works with structured data and wants quick conversion without installing heavy software:</p>
+      <p>DataFormatHub helps anyone working with structured data turn raw JSON into clean CSV tables without installing heavy software:</p>
       <ul>
-        <li><strong>Developers &amp; QA Engineers:</strong> Inspect JSON API responses in a clean spreadsheet-ready table.</li>
-        <li><strong>Data Analysts &amp; Students:</strong> Prepare JSON datasets for Excel, Google Sheets, or data analysis coursework.</li>
-        <li><strong>Business &amp; Operations Teams:</strong> Export product lists, orders, or records into CSV format in seconds.</li>
+        <li><strong>Developers &amp; QA Engineers:</strong> Quickly inspect JSON API responses in rows and columns.</li>
+        <li><strong>Data Analysts &amp; Students:</strong> Prepare datasets for spreadsheets, charts, and assignments.</li>
+        <li><strong>Business &amp; Operations Teams:</strong> Export product lists, orders, and customer records for bulk uploads or reporting.</li>
       </ul>
     </section>
 
@@ -213,32 +209,45 @@
     <section class="info-section">
       <h2>2. How to Use This Tool</h2>
       <ol>
-        <li>Paste a JSON array of objects (or click <strong>Load Sample JSON</strong> to test) into the <strong>JSON Input</strong> box.</li>
-        <li>Click <strong>Convert to CSV</strong> to generate clean comma-separated values immediately.</li>
-        <li>Click <strong>Download CSV</strong> to save the <code>dataformat-hub.csv</code> file to your device.</li>
+        <li>Paste a JSON array of objects (or click <strong>Load Sample JSON</strong>) into the <strong>JSON Input</strong> box.</li>
+        <li>Click <strong>Convert to CSV</strong> to generate comma-separated rows immediately.</li>
+        <li>Click <strong>Download CSV</strong> to save <code>dataformat-hub.csv</code> to your device.</li>
       </ol>
     </section>
 
-    <!-- Benefits -->
+    <!-- JSON vs CSV & Where CSV Is Used -->
     <section class="info-section">
-      <h2>3. Benefits &amp; What You Can Do</h2>
+      <h2>3. JSON vs CSV &amp; Where CSV Is Used</h2>
+      <p><strong>JSON (JavaScript Object Notation)</strong> stores structured data using keys, braces, and brackets—ideal for apps and APIs, though harder for humans to scan as a table.</p>
+      <p><strong>CSV (Comma-Separated Values)</strong> stores plain text rows separated by commas. Beyond <strong>Microsoft Excel</strong> and <strong>Google Sheets</strong>, CSV files are widely used for:</p>
       <ul>
-        <li><strong>Privacy First:</strong> All conversions run locally inside your browser—your data is never uploaded to a server.</li>
-        <li><strong>Save Time:</strong> Turn nested or repetitive JSON records into readable CSV rows with one click.</li>
-        <li><strong>Mobile &amp; Desktop Friendly:</strong> Works smoothly on mobile browsers as well as laptops and desktops.</li>
+        <li><strong>Databases, CRM &amp; E-Commerce Platforms:</strong> Bulk importing products, leads, or inventory records.</li>
+        <li><strong>Data Analysis &amp; Programming:</strong> Reading tabular data in Python, SQL, or analytics tools.</li>
+        <li><strong>Marketing &amp; Contact Lists:</strong> Uploading recipient lists for email or messaging tools.</li>
+        <li><strong>Plain Text Inspection:</strong> Viewing lightweight records in any text editor.</li>
+      </ul>
+    </section>
+
+    <!-- Benefits & Privacy -->
+    <section class="info-section">
+      <h2>4. Benefits &amp; Privacy Notice</h2>
+      <ul>
+        <li><strong>100% Browser-Based Privacy:</strong> Your JSON and CSV data are processed locally in your browser and are not uploaded to our servers.</li>
+        <li><strong>Fast &amp; Mobile Friendly:</strong> Works smoothly on mobile browsers, tablets, and desktop screens.</li>
+        <li><strong>Advertising &amp; Analytics Readiness:</strong> In the future, this site may use third-party advertising partners (such as Google AdSense) that may use cookies to serve relevant ads.</li>
       </ul>
     </section>
 
     <!-- Affiliate / Recommended Tools Section -->
     <section class="affiliate-box">
-      <h2>4. Recommended Tools &amp; Resources</h2>
-      <p>Add your affiliate links below as you join programs (replace <code>#</code> with your actual affiliate URLs):</p>
+      <h2>5. Recommended Tools &amp; Resources</h2>
+      <p>Replace <code>#</code> below with your approved affiliate URLs when ready:</p>
       <div class="affiliate-links">
         <a href="#" target="_blank" rel="nofollow sponsored">Web Hosting Deals</a>
-        <a href="#" target="_blank" rel="nofollow sponsored">Data &amp; Excel Courses</a>
-        <a href="#" target="_blank" rel="nofollow sponsored">Developer Tools</a>
+        <a href="#" target="_blank" rel="nofollow sponsored">Spreadsheet &amp; Data Courses</a>
+        <a href="#" target="_blank" rel="nofollow sponsored">Developer Productivity Tools</a>
       </div>
-      <p class="disclosure">Disclosure: Links in this section may be affiliate links. If you purchase through them, DataFormatHub may earn a commission at no extra cost to you.</p>
+      <p class="disclosure">Disclosure: Some links above may be affiliate links. If you make a purchase through them, DataFormatHub may earn a commission at no extra cost to you.</p>
     </section>
   </main>
 
@@ -340,4 +349,4 @@
     });
   </script>
 </body>
-                    </html>
+    </html>
