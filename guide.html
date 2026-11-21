@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Common Mistakes When Opening CSV Files in Excel — DataFormatHub</title>
+  <meta name="description" content="Learn how to fix common CSV issues in Excel such as all data appearing in one column, leading zeros disappearing, and broken special characters." />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      color: #1f2937;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+    header {
+      background: #111827;
+      color: #ffffff;
+      padding: 20px 16px;
+      text-align: center;
+    }
+    header a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 22px;
+      margin-top: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 8px 0 0;
+    }
+    h2 {
+      font-size: 19px;
+      color: #111827;
+      margin-top: 0;
+    }
+    .cta-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 24px;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">← Back to DataFormatHub JSON to CSV Converter</a>
+    <h1>Common Mistakes When Opening CSV Files in Excel</h1>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>1. All Data Appears in a Single Column</h2>
+      <p><strong>Why it happens:</strong> Some regions use a semicolon (<code>;</code>) instead of a comma (<code>,</code>) as the default list separator in Excel.</p>
+      <p><strong>How to fix it:</strong> Open a blank workbook in Excel, go to <strong>Data → From Text/CSV</strong>, select your file, and choose <strong>Comma</strong> as the delimiter before clicking Load.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. Leading Zeros Disappear (e.g., 00123 becomes 123)</h2>
+      <p><strong>Why it happens:</strong> When you double-click a CSV file directly, Excel automatically treats numeric strings like zip codes, phone numbers, or IDs as plain numbers and removes leading zeros.</p>
+      <p><strong>How to fix it:</strong> Use <strong>Data → From Text/CSV</strong> instead of double-clicking the file, and set that column's data type to <strong>Text</strong> during import.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Special Characters or Accents Look Broken</h2>
+      <p><strong>Why it happens:</strong> Older versions of Excel sometimes open UTF-8 CSV files using the wrong character encoding, turning symbols or non-English letters into strange characters.</p>
+      <p><strong>How to fix it:</strong> Import the CSV through <strong>Data → From Text/CSV</strong> and select <strong>65001: Unicode (UTF-8)</strong> as the File Origin.</p>
+    </div>
+
+    <div class="card">
+      <h2>4. Long Numbers Turn into Scientific Notation (1.23E+11)</h2>
+      <p><strong>Why it happens:</strong> Numbers with more than 11 digits (such as tracking numbers or order IDs) are automatically formatted in scientific notation by Excel.</p>
+      <p><strong>How to fix it:</strong> Import the column as <strong>Text</strong> via the Text Import Wizard so Excel keeps every digit intact.</p>
+    </div>
+
+    <div class="cta-box">
+      <h2>Need to Convert JSON Data into a Clean CSV File?</h2>
+      <p>Convert raw JSON arrays into ready-to-use CSV files directly in your browser without uploading data to any server.</p>
+      <a class="btn" href="index.html">Open Free JSON to CSV Converter</a>
+    </div>
+
+    <footer>
+      <p>© 2026 DataFormatHub — Free Browser-Based Data Utilities</p>
+    </footer>
+  </div>
+
+</body>
+                                                                                                                             </html>
