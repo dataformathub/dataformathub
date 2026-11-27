@@ -4,158 +4,170 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DataFormatHub — Free Online JSON to CSV Converter</title>
-  <meta name="description" content="Convert JSON data to CSV format instantly in your browser. Learn JSON vs CSV, where CSV is used beyond Excel, and convert data privately." />
+  <meta name="description" content="Convert JSON to CSV instantly in your browser. Fast, free, private JSON to CSV converter tool with sample data, instant download, and practical guides." />
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     body {
-      background: #f4f7fb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f1f5f9;
       color: #1e293b;
-      line-height: 1.65;
+      line-height: 1.6;
     }
     header {
-      background: #0f172a;
+      background-color: #0f172a;
       color: #ffffff;
-      padding: 22px 16px;
       text-align: center;
+      padding: 24px 16px;
     }
     header h1 {
-      font-size: 1.85rem;
-      letter-spacing: 0.4px;
+      font-size: 1.75rem;
+      margin-bottom: 6px;
     }
     header p {
+      font-size: 0.95rem;
       color: #cbd5e1;
-      font-size: 0.96rem;
-      margin-top: 6px;
     }
     .container {
-      max-width: 980px;
-      margin: 24px auto;
-      padding: 0 16px;
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 0 14px;
     }
     .tool-card, .info-section {
       background: #ffffff;
-      border-radius: 12px;
-      padding: 22px;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
-      margin-bottom: 24px;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      text-align: left;
     }
     .grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
-    @media (min-width: 768px) {
+    @media (max-width: 700px) {
       .grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
     }
     label {
       display: block;
       font-weight: 600;
-      margin-bottom: 8px;
-      color: #0f172a;
+      margin-bottom: 6px;
+      font-size: 0.92rem;
+      color: #334155;
     }
     textarea {
       width: 100%;
-      min-height: 220px;
+      height: 220px;
       padding: 12px;
       border: 1px solid #cbd5e1;
       border-radius: 8px;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      resize: vertical;
       background: #f8fafc;
       color: #0f172a;
-      resize: vertical;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      background: #ffffff;
     }
     .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 16px;
+      margin-top: 14px;
     }
     button {
-      padding: 11px 18px;
+      padding: 10px 16px;
       border: none;
-      border-radius: 8px;
-      font-size: 0.95rem;
+      border-radius: 6px;
       font-weight: 600;
+      font-size: 0.9rem;
       cursor: pointer;
     }
     .btn-primary {
-      background: #2563eb;
+      background-color: #2563eb;
       color: #ffffff;
     }
     .btn-success {
-      background: #16a34a;
+      background-color: #16a34a;
       color: #ffffff;
     }
     .btn-secondary {
-      background: #e2e8f0;
+      background-color: #e2e8f0;
       color: #1e293b;
     }
     .status {
-      margin-top: 12px;
-      font-size: 0.92rem;
+      margin-top: 10px;
+      font-size: 0.9rem;
       font-weight: 500;
     }
-    .error {
-      color: #dc2626;
-    }
-    .ok {
+    .status.ok {
       color: #15803d;
     }
-    .info-section h2 {
-      font-size: 1.25rem;
+    .status.error {
+      color: #b91c1c;
+    }
+    .guide-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0 22px;
+    }
+    .guide-btn-1 {
+      display: inline-block;
+      padding: 11px 18px;
+      background: #dbeafe;
       color: #0f172a;
+      border: 1px solid #93c5fd;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .guide-btn-2 {
+      display: inline-block;
+      padding: 11px 18px;
+      background: #e0f2fe;
+      color: #0f172a;
+      border: 1px solid #7dd3fc;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .info-section h2 {
+      font-size: 1.15rem;
       margin-bottom: 10px;
+      color: #0f172a;
     }
     .info-section p {
       margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #334155;
     }
     .info-section ul, .info-section ol {
-      padding-left: 20px;
-      margin-top: 6px;
-    }
-    .info-section li {
-      margin-bottom: 7px;
-    }
-    .affiliate-box {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 24px;
-    }
-    .affiliate-box h2 {
-      font-size: 1.2rem;
-      color: #1e3a8a;
+      padding-left: 22px;
       margin-bottom: 8px;
     }
-    .affiliate-links {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .info-section li {
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      color: #334155;
     }
-    .affiliate-links a {
-      background: #ffffff;
-      color: #1d4ed8;
-      border: 1px solid #93c5fd;
-      padding: 8px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    .disclosure {
-      font-size: 0.8rem;
-      color: #475569;
-      margin-top: 10px;
+    code {
+      background: #f1f5f9;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 0.88rem;
     }
     footer {
       text-align: center;
@@ -190,18 +202,17 @@
         <button class="btn-success" id="downloadBtn" type="button">Download CSV</button>
         <button class="btn-secondary" id="sampleBtn" type="button">Load Sample JSON</button>
         <button class="btn-secondary" id="clearBtn" type="button">Clear</button>
-      </div> 
+      </div>
       <div id="statusMsg" class="status"></div>
     </section>
-     <div style="text-align: center; margin: 16px 0 20px;">
-  <a href="guide.html" style="display: inline-block; padding: 11px 18px; background: #dbeafe; color: #0f172a; border: 1.5px solid #2563eb; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 15px;">
-<div style="text-align: center; margin: 16px 0 12px;">
-  <a href="guide.html" style="display: inline-block; padding: 11px 18px; background: #dbeafe; color: #0f172a; border-radius: 6px; text-decoration: none; font-weight: 600;">Guide: Common CSV Mistakes in Excel →</a>
-</div>
-<div style="text-align: center; margin: 0 0 20px;">
-  <a href="json-to-csv-guide.html" style="display: inline-block; padding: 11px 18px; background: #e0f2fe; color: #0f172a; border-radius: 6px; text-decoration: none; font-weight: 600;">Guide: How to Convert JSON to CSV →</a>
-</div>
- <!-- Who Is This Site For -->
+
+    <!-- Guide Buttons -->
+    <div class="guide-buttons">
+      <a class="guide-btn-1" href="guide.html">📘 Guide: Common CSV Mistakes in Excel →</a>
+      <a class="guide-btn-2" href="json-to-csv-guide.html">📄 Guide: How to Convert JSON to CSV →</a>
+    </div>
+
+    <!-- Who Is This Site For -->
     <section class="info-section">
       <h2>1. Who Is DataFormatHub For?</h2>
       <p>DataFormatHub helps anyone working with structured data turn raw JSON into clean CSV tables without installing heavy software:</p>
@@ -221,8 +232,7 @@
         <li>Click <strong>Download CSV</strong> to save <code>dataformat-hub.csv</code> to your device.</li>
       </ol>
     </section>
-      
-   
+
     <!-- JSON vs CSV & Where CSV Is Used -->
     <section class="info-section">
       <h2>3. JSON vs CSV &amp; Where CSV Is Used</h2>
@@ -246,19 +256,15 @@
       </ul>
     </section>
 
-    
+    <!-- FAQ -->
+    <section class="info-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <p><strong>Is my JSON data uploaded to a server?</strong><br>No. Everything runs directly inside your web browser, so your JSON data is not uploaded to or stored on any external server.</p>
+      <p><strong>Is this JSON to CSV converter free to use?</strong><br>Yes, it is completely free to use with no sign-up required.</p>
+      <p><strong>How do I open the downloaded CSV file in Excel or Google Sheets?</strong><br>You can open the downloaded <code>.csv</code> file directly in Google Sheets or Excel. If columns or special characters look off, check our <a href="guide.html">Common CSV Mistakes in Excel</a> guide.</p>
+    </section>
   </main>
-<section class="info-section" id="faq">
-  <h2>Frequently Asked Questions</h2>
-  <p><strong>Is my JSON data uploaded to a server?</strong><br>
-  No. Everything runs directly inside your web browser, so your JSON data is not uploaded to or stored on any external server.</p>
 
-  <p><strong>Is this JSON to CSV converter free to use?</strong><br>
-  Yes, it is completely free to use with no sign-up required.</p>
-
-  <p><strong>How do I open the downloaded CSV file in Excel or Google Sheets?</strong><br>
-  You can open the downloaded <code>.csv</code> file directly in Google Sheets or Excel. If columns or special characters look off, check our <a href="guide.html">Common CSV Mistakes in Excel</a> guide.</p>
-</section>
   <footer>
     <p>&copy; <span id="year"></span> DataFormatHub. All rights reserved.</p>
   </footer>
@@ -289,22 +295,22 @@
       if (!rows.length || typeof rows[0] !== "object" || rows[0] === null) {
         throw new Error("Please provide a JSON object or an array of objects.");
       }
-
       const headers = [];
       rows.forEach((row) => {
-        if (typeof row === "object" && row !== null) {
+        if (row && typeof row === "object" && !Array.isArray(row)) {
           Object.keys(row).forEach((key) => {
             if (!headers.includes(key)) headers.push(key);
           });
         }
       });
-
+      if (!headers.length) {
+        throw new Error("No valid key-value pairs found in JSON.");
+      }
       const lines = [headers.map(escapeCsvValue).join(",")];
       rows.forEach((row) => {
-        const line = headers.map((h) => escapeCsvValue(row[h])).join(",");
+        const line = headers.map((h) => escapeCsvValue(row ? row[h] : "")).join(",");
         lines.push(line);
       });
-
       return lines.join("\n");
     }
 
@@ -318,35 +324,38 @@
         const parsed = JSON.parse(raw);
         const csv = jsonToCsv(parsed);
         csvOutput.value = csv;
-        setStatus("Converted to CSV successfully!");
+        setStatus("Converted successfully!");
       } catch (err) {
-        csvOutput.value = "";
         setStatus("Invalid JSON: " + err.message, true);
       }
     });
 
     document.getElementById("downloadBtn").addEventListener("click", () => {
-      if (!csvOutput.value.trim()) {
-        setStatus("Convert JSON to CSV first before downloading.", true);
+      const csv = csvOutput.value;
+      if (!csv.trim()) {
+        setStatus("Nothing to download. Convert JSON to CSV first.", true);
         return;
       }
-      const blob = new Blob([csvOutput.value], { type: "text/csv;charset=utf-8;" });
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
       a.download = "dataformat-hub.csv";
+      document.body.appendChild(a);
       a.click();
+      document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      setStatus("CSV file downloaded!");
+      setStatus("Downloaded dataformat-hub.csv");
     });
 
     document.getElementById("sampleBtn").addEventListener("click", () => {
       const sample = [
-        { id: 1, name: "Rohan Patel", role: "Frontend Dev", country: "India" },
-        { id: 2, name: "Sara Khan", role: "Data Analyst", country: "India" },
-        { id: 3, name: "Liam Roy", role: "Product Lead", country: "USA" }
+        { name: "Aarav", role: "Analyst", city: "Ahmedabad" },
+        { name: "Meera", role: "Developer", city: "Surat" },
+        { name: "Kabir", role: "Manager", city: "Vadodara" }
       ];
       jsonInput.value = JSON.stringify(sample, null, 2);
+      csvOutput.value = "";
       setStatus("Sample JSON loaded. Click 'Convert to CSV'.");
     });
 
@@ -357,5 +366,4 @@
     });
   </script>
 </body>
-    </html>
-
+</html>
